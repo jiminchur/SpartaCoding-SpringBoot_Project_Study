@@ -7,7 +7,7 @@
 |인사|GET|/api/hello|hello world 출력하기|
 
 ### 1. API 요청을 받아서 처리하기 위해 HelloController 생성
-![스크린샷](./IMG/0.0.1_(1).png)
+![스크린샷](./IMG/0.0.1_(2).png)
 
 ### 2. Postman을 사용하여 API test 하기
-![스크린샷](./IMG/0.0.1_(2).png)
+![스크린샷](./IMG/0.0.1_(1).png)
