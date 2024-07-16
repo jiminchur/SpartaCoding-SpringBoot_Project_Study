@@ -1,0 +1,11 @@
+package com.example.spartacoding;
+
+class Main {
+   Main() {
+   }
+
+   public static void main(String[] args) {
+      Memo memo = new Memo("\ubbfc\ucca0");
+      System.out.println(memo.getUsername());
+   }
+}
