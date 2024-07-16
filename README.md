@@ -1,25 +1,17 @@
-## Version 0.0.3
-> @getter @setter @AllArgsConstructor @NoArgsConstructor @RequiredArgsConstructor 다뤄보기 및 application.properties 파일에서 port 수정해보기
+## Version 0.0.4
+> GetMapping, PostMapping, PutMapping, DeleteMapping 생성 후 Postman으로 test 진행
 
-### Memo.java 생성 후 getter setter 적용하기
-![스크린샷](./IMG/0.0.3/memo_java_gs.png)
+### HelloController.java 파일 생성하기
+![스크린샷](./IMG/0.0.4/controller.png)
 
-### getter setter가 생성되는 memo.class 파일 체크하기
-![스크린샷](./IMG/0.0.3/memo_class.png)
-* setUsername()은 적용은 되나 class파일에서는 식별이 되질않음
+### Postman test - get
+![스크린샷](./IMG/0.0.4/get.png)
 
-### NoArgsConstructor
-![스크린샷](./IMG/0.0.3/memo_java_no.png)
+### Postman test - post
+![스크린샷](./IMG/0.0.4/post.png)
 
-### AllArgsConstructor
-![스크린샷](./IMG/0.0.3/memo_java_all.png)
+### Postman test - put
+![스크린샷](./IMG/0.0.4/put.png)
 
-### RequiredArgsConstructor
-![스크린샷](./IMG/0.0.3/memo_java_re.png)
-
-### application.properties에서 Port번호 수정해보고 확인하기
-* application.properties에서 수정
-![스크린샷](./IMG/0.0.3/port_file.png)
-
-* 실행 후 port번호 확인
-![스크린샷](./IMG/0.0.3/port_check.png)
+### Postman test - delete
+![스크린샷](./IMG/0.0.4/delete.png)
