@@ -1,20 +1,18 @@
-## Version 0.0.6
-> 데이터를 Client에 반환하는 방법
+## Version 0.0.7
+> Jackson 실습하기
 
-### Json 데이터 반환하는 방법 (반환값 : String)
-![스크린샷](./IMG/0.0.6/json.png)
+### Object를 Json으로 변환시키기
+![스크린샷](./IMG/0.0.7/object-json.png)
 
-#### Postman test - 결과값 text로 보기
-![스크린샷](./IMG/0.0.6/json-test.png)
+### Object를 Json으로 변환 Test
+![스크린샷](./IMG/0.0.7/object-json-test.png)
 
-#### Postman test - 결과값 json로 보기
-![스크린샷](./IMG/0.0.6/json-test-json.png)
+### Json를 Object으로 변환시키기
+![스크린샷](./IMG/0.0.7/json-object.png)
 
-### Json 데이터 반환하는 방법 (반환값 : String 외 자바 클래스)
-![스크린샷](./IMG/0.0.6/class.png)
-
-#### Star.java
-![스크린샷](./IMG/0.0.6/star.png)
-
-#### Postman test
-![스크린샷](./IMG/0.0.6/class-test.png)
+### Json를 Object으로 변환 Test
+* 성공
+![스크린샷](./IMG/0.0.7/json-object-test.png)
+#### Star.java파일의 @Getter를 주석처리 해보고 Test 해보기
+* 실패
+![스크린샷](./IMG/0.0.7/json-object-test-fail.png)
