@@ -1,2 +1,2 @@
-## Version 0.1.7
-> 필터 기능 추가
+## Version 0.1.8
+> 로그인 기능 Spring Security로 구현하기
