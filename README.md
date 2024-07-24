@@ -1,73 +1,47 @@
-## Version 0.0.8
-> Path Variable과 Request Param 실습하기
+## Version 0.1.1
+> Bean을 수동으로 등록하는 방법
 
-### 여러 가지 방식을 모두 학습할 수 있는 HTML파일
-![스크린샷](./IMG/0.0.8/html_code.png)
+### 새로운 프로젝트 생성하기
+- Name: spring-auth
+- **Language: Java**
+- **Build system: Gradle - Groovy**
+- Group: com.sparta
+- **JDK: 17**
 
-### Request 요청 HTML 추가하기
-![스크린샷](./IMG/0.0.8/controller.png)
-
-### 적용된 web화면
-![스크린샷](./IMG/0.0.8/html_web.png)
-
-### Path Variable 방식
-* 서버에 보내려는 데이터를 URL 경로에 추가할 수 있다.
-* 예시 ) GET http://localhost:8080/hello/request/star/Robbie/age/95
-![스크린샷](./IMG/0.0.8/get_1.png)
-![스크린샷](./IMG/0.0.8/get_1_result.png.png)
+### 프로젝트 설정
+* Spring web
+* Lombok
+* thymlef
+* Security
 ```
-@GetMapping("/star/{name}/age/{age}")
-@ResponseBody
-public String helloRequestPath(@PathVariable String name, @PathVariable int age)
-{
-    return String.format("Hello, @PathVariable.<br> name = %s, age = %d", name, age);
+implementation 'org.springframework.boot:spring-boot-starter-security'
+```
+
+### Security 기능 제한하는법
+* SpringAuthApplication.java 폴더에 아래코드 추가
+```
+package com.sparta.springauth;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+
+@SpringBootApplication(exclude = SecurityAutoConfiguration.class) // Spring Security 인증 기능 제외
+public class SpringAuthApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpringAuthApplication.class, args);
+    }
+
 }
 ```
+![스크린샷](./IMG/0.1.1/security.png)
+### config폴더 생성 후 PasswordConfig.java 파일 생성
+![스크린샷](./IMG/0.1.1/config_java.png)
 
-### Request Param 방식
-* 서버에 보내려는 데이터를 URL 경로 마지막에 `?` 와 `&` 를 사용하여 추가할 수 있다.
-* 예시 ) GET http://localhost:8080/hello/request/form/param?name=Robbie&age=95
-![스크린샷](./IMG/0.0.8/get_2.png)
-![스크린샷](./IMG/0.0.8/get_2_result.png.png)
-```
-@GetMapping("/form/param")
-@ResponseBody
-public String helloGetRequestParam(@RequestParam String name, @RequestParam int age) {
-    return String.format("Hello, @RequestParam.<br> name = %s, age = %d", name, age);
-}
-```
+### test 해보기 
+#### test 파일 PasswordConfigTest.java 파일 생성
+![스크린샷](./IMG/0.1.1/config_test.png)
 
-### form 태그 POST
-* HTML의 form 태그를 사용하여 POST 방식으로 HTTP 요청을 보낼 수 있다.
-* HTML
-```
-<form method="POST" action="/hello/request/form/model">
-  <div>
-    이름: <input name="name" type="text">
-  </div>
-  <div>
-    나이: <input name="age" type="text">
-  </div>
-  <button>전송</button>
-</form>
-```
-* 이때 해당 데이터는 HTTP Body에 name=Robbie&age=95 형태로 담겨져서 서버로 전달된다.
-```
-@PostMapping("/form/param")
-@ResponseBody
-public String helloPostRequestParam(@RequestParam String name, @RequestParam int age) {
-    return String.format("Hello, @RequestParam.<br> name = %s, age = %d", name, age);
-}
-```
-* 다른 경우의 수
-```
-@GetMapping("/form/param")
-@ResponseBody
-public String helloGetRequestParam(@RequestParam(required = false) String name, int age) {
-    return String.format("Hello, @RequestParam.<br> name = %s, age = %d", name, age);
-}
-```
-* @RequestParam은 생략이 가능
-* required 옵션을 false로 설정하면 빈칸으로 전달해도 오류가 발생하지 않음
-* @PathVariable(required = false) 도 해당 옵션이 존재
-* Client로 부터 값을 전달 받지 못한 해당 변수는 null로 초기화
+* test 성공 후 출력 값
+![스크린샷](./IMG/0.1.1/test_result.png)
