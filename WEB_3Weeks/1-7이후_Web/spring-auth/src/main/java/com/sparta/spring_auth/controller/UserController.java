@@ -5,8 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.sparta.spring_auth.dto.LoginRequestDto;
 import com.sparta.spring_auth.dto.SignupRequestDto;
 import com.sparta.spring_auth.service.UserService;
+
+import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
 @RequestMapping("/api")
@@ -32,5 +35,16 @@ public class UserController {
     public String signup(SignupRequestDto requestDto){
         userService.signup(requestDto);
         return "redirect:/api/user/login-page";
+    }
+
+    @PostMapping("/user/login")
+    public String login(LoginRequestDto requestDto, HttpServletResponse res){
+        try{
+            userService.login(requestDto, res);
+        } catch (Exception e){
+            return "redirect:/api/user/login-page?error";
+        }
+
+        return "redirect:/";
     }
 }
