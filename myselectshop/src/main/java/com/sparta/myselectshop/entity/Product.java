@@ -1,5 +1,7 @@
 package com.sparta.myselectshop.entity;
 
+import java.util.*;
+
 import com.sparta.myselectshop.dto.ProductMypriceRequestDto;
 import com.sparta.myselectshop.dto.ProductRequestDto;
 import com.sparta.myselectshop.naver.dto.ItemDto;
@@ -38,6 +40,10 @@ public class Product extends Timestamped {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id",nullable = false)
     private User user;
+
+    @OneToMany(mappedBy = "product")
+    private List<ProductFolder> productFolderList = new ArrayList<>();
+
 
     public Product(ProductRequestDto requestDto, User user) {
         this.title = requestDto.getTitle();
