@@ -3,6 +3,10 @@ package com.sparta.myselectshop.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.sparta.myselectshop.dto.ProductMypriceRequestDto;
@@ -10,6 +14,7 @@ import com.sparta.myselectshop.dto.ProductRequestDto;
 import com.sparta.myselectshop.dto.ProductResponseDto;
 import com.sparta.myselectshop.entity.Product;
 import com.sparta.myselectshop.entity.User;
+import com.sparta.myselectshop.entity.UserRoleEnum;
 import com.sparta.myselectshop.naver.dto.ItemDto;
 import com.sparta.myselectshop.repository.ProductRepository;
 
@@ -44,14 +49,24 @@ public class ProductService {
         return new ProductResponseDto(product);
     }
 
-    public List<ProductResponseDto> getProducts(User user) {
-        List<Product> productList = productRepository.findAllByUser(user);
-        List<ProductResponseDto> responseDtoList = new ArrayList<>();
-        
-        for (Product product : productList){
-            responseDtoList.add(new ProductResponseDto(product));
+    public Page<ProductResponseDto> getProducts(User user,int page, int size, String sortBy, boolean isAsc) {
+        // 페이징 처리
+        Sort.Direction direction = isAsc ? Sort.Direction.ASC : Sort.Direction.DESC;
+        Sort sort = Sort.by(direction, sortBy);
+        Pageable pageable = PageRequest.of(page, size, sort);
+
+        UserRoleEnum userRoleEnum = user.getRole();
+
+        Page<Product> productList;
+
+        if (userRoleEnum == UserRoleEnum.USER) {
+            // 사용자 권한이 USER 일 경우
+            productList = productRepository.findAllByUser(user, pageable);
+        } else {
+            productList = productRepository.findAll(pageable);
         }
-        return responseDtoList;
+
+        return productList.map(ProductResponseDto::new);
     }
 
     @Transactional
@@ -60,15 +75,5 @@ public class ProductService {
             new NullPointerException("해당 상품은 존재하지 않습니다.")
         );
         product.updateByItemDto(itemDto);
-    }
-
-    public List<ProductResponseDto> getAllProducts() {
-        List<Product> productList = productRepository.findAll();
-        List<ProductResponseDto> responseDtoList = new ArrayList<>();
-    
-        for (Product product : productList) {
-            responseDtoList.add(new ProductResponseDto(product));
-        }
-        return responseDtoList;
     }
 }

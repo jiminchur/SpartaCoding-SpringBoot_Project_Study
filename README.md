@@ -41,6 +41,7 @@
 
 </details>
 
+
 <details>
   <summary><h3>1.0.3</h3></summary>
 
@@ -49,5 +50,33 @@
 2. 상품 등록 및 조회 구현
 3. Repository에 회원별 상품을 조회하는 메서드 추가
 4. Admin 계정 모든 상품 조회 기능 추가
+
+</details>
+
+<details>
+  <summary><h3>1.0.4</h3></summary>
+
+> 상품 페이징 및 정령
+
+### 페이징
+* page :  조회할 페이지 번호 (**1부터 시작**)
+* size : 한 페이지에 보여줄 상품 개수 (**10개로 고정**!)
+
+### 정렬
+* sortBy (정렬 항목)
+  * id : Product 테이블의 id
+  * title : 상품명
+  * lprice : 최저가
+* isAsc (오름차순?)
+  * true: 오름차순 (asc)
+  * false : 내림차순 (desc)
+
+### Server -> Client
+- number : 조회된 페이지 번호 (**0부터 시작**)
+- content : 조회된 상품 정보 (배열)
+- size : 한 페이지에 보여줄 상품 개수
+- numberOfElements : 실제 조회된 상품 개수
+- totalElements : 전체 상품 개수 (회원이 등록한 모든 상품의 개수)
+- totalPages : 전체 페이지 수
 
 </details>
