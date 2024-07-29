@@ -3,7 +3,7 @@
 
 ### Version 
 <details>
-  <summary>1.0.1</summary>
+  <summary><h3>1.0.1</h3></summary>
 
 ### 요구사항 파악
 1. 키워드로 상품의 정보 검색
@@ -25,9 +25,11 @@
 |관심 상품 조회하기|GET|/api/products|List<ProductResponseDto>|
 
 </details>
+<details>
+  <summary><h3>1.0.2</h3></summary>
 
-### 1.0.2
-> 회원기능 구현
+### 요구사항 파악
+1. 회원기능 구현
 
 ### API 설계
 |Name|Method|URL|설명|
@@ -36,3 +38,5 @@
 |회원가입 페이지|GET|/api/user/sign-up|회원가입 페이지 호출|
 |회원가입 페이지|POST|/api/user/sign-up|회원가입|
 |회원 정보 요청|GET|/api/user-info|회원 관련 정보 받기|
+
+</details>
