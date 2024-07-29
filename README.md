@@ -8,6 +8,7 @@
 2. 관심 상품 등록하기
 3. 관심 상품의 "희망 최저가" 설정하기
 4. 관심 상품 조회하기
+5. 매일 새벽1시에 관심 상품 목록 제목으로 검색해서, 최저가 정보를 업데이트 하는 스케줄러 생성하기
 
 ### 상품검색 API
 |기능|Method|URL|반환|
@@ -20,3 +21,4 @@
 |관심 상품 등록하기|POST|/api/products|ProductResponseDto|
 |관심 상품의 희망 최저가 업데이트|PUT|/api/products/{id}|ProductResponseDto|
 |관심 상품 조회하기|GET|/api/products|List<ProductResponseDto>|
+
