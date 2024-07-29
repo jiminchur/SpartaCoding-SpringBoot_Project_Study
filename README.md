@@ -40,3 +40,14 @@
 |회원 정보 요청|GET|/api/user-info|회원 관련 정보 받기|
 
 </details>
+
+<details>
+  <summary><h3>1.0.3</h3></summary>
+
+### 요구사항 파악
+1. 회원별 상품 API 구현
+2. 상품 등록 및 조회 구현
+3. Repository에 회원별 상품을 조회하는 메서드 추가
+4. Admin 계정 모든 상품 조회 기능 추가
+
+</details>
