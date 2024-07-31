@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sparta.myselectshop.MyselectshopApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-07-30T02:46:10" hostname="jimincheol-ui-MacBookPro.local" time="0.33">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.sparta.myselectshop.MyselectshopApplicationTests" time="0.33"/>
+  <system-out><![CDATA[11:46:07.510 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.sparta.myselectshop.MyselectshopApplicationTests]: MyselectshopApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:46:07.563 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.sparta.myselectshop.MyselectshopApplication for test class com.sparta.myselectshop.MyselectshopApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.2)
+
+2024-07-30T11:46:07.746+09:00  WARN 92594 --- [myselectshop] [    Test worker] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/Users/jimincheol/.gradle/caches/modules-2/files-2.1/org.json/json/20230227/7a0d4aca76513d8ce81f9b044ce8126b84809ad8/json-20230227.jar!/org/json/JSONObject.class
+	jar:file:/Users/jimincheol/.gradle/caches/modules-2/files-2.1/com.vaadin.external.google/android-json/0.0.20131108.vaadin1/fa26d351fe62a6a17f5cda1287c1c6110dec413f/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-07-30T11:46:07.755+09:00  INFO 92594 --- [myselectshop] [    Test worker] c.s.m.MyselectshopApplicationTests       : Starting MyselectshopApplicationTests using Java 17.0.9 with PID 92594 (started by jimincheol in /Users/jimincheol/spartacodingclub_stduy/myselectshop)
+2024-07-30T11:46:07.756+09:00  INFO 92594 --- [myselectshop] [    Test worker] c.s.m.MyselectshopApplicationTests       : No active profile set, falling back to 1 default profile: "default"
+2024-07-30T11:46:08.098+09:00  INFO 92594 --- [myselectshop] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-30T11:46:08.125+09:00  INFO 92594 --- [myselectshop] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 4 JPA repository interfaces.
+2024-07-30T11:46:08.426+09:00  INFO 92594 --- [myselectshop] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-30T11:46:08.453+09:00  INFO 92594 --- [myselectshop] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-30T11:46:08.466+09:00  INFO 92594 --- [myselectshop] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-30T11:46:08.594+09:00  INFO 92594 --- [myselectshop] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-30T11:46:08.605+09:00  INFO 92594 --- [myselectshop] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-30T11:46:08.874+09:00  INFO 92594 --- [myselectshop] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@40013051
+2024-07-30T11:46:08.875+09:00  INFO 92594 --- [myselectshop] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-30T11:46:09.448+09:00  INFO 92594 --- [myselectshop] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-30T11:46:09.612+09:00  INFO 92594 --- [myselectshop] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-30T11:46:09.897+09:00  WARN 92594 --- [myselectshop] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-30T11:46:09.908+09:00  INFO 92594 --- [myselectshop] [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2024-07-30T11:46:09.942+09:00  INFO 92594 --- [myselectshop] [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-07-30T11:46:10.276+09:00  INFO 92594 --- [myselectshop] [    Test worker] c.s.m.MyselectshopApplicationTests       : Started MyselectshopApplicationTests in 2.632 seconds (process running for 3.228)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
